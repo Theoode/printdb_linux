@@ -51,7 +51,7 @@ async function runQuery() {
                 }
                 else if(type===3){
                     printerName = printerName === "" ? "IMP_ETIQ" : printerName;
-                    orientation = "1" ? "orientation-requested=4" : "orientation-requested=4";
+                    orientation = "1" ? "orientation-requested=3" : "orientation-requested=4";
                     let command = `lp -d "${printerName}" -o "${orientation}" "${nomfic}"`;
                     exec(command, (error, stdout, stderr) => {console.log(`Sortie: ${stdout}`);});
                 }
