@@ -1,3 +1,3 @@
-GITHUB_TOKEN=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
+GITHUB_TOKEN=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
 USERNAME_git=Theoode
 REPONAME=printdb_linux
