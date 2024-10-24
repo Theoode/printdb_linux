@@ -1,5 +1,5 @@
 const os = require('os');
-const { connectToDB } = require('../../../Desktop/Nouveau dossier/config.js');
+const { connectToDB } = require('../config.js');
 const { exec } = require('child_process');
 const path = require("path");
 
