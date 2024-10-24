@@ -10,8 +10,8 @@ After=network.target
 ExecStart=/usr/bin/node /home/user/printdb_linux/printdb_update/update.js
 WorkingDirectory=/home/user/printdb_linux/printdb_update
 Restart=always
-User=user          
-Group=user           
+User=root          
+Group=root           
 Environment=NODE_ENV=production
 StandardOutput=journal
 StandardError=journal
