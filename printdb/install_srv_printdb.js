@@ -1,9 +1,6 @@
 const fs = require('fs');
 const { exec } = require('child_process');
 const serviceFilePath = '/etc/systemd/system/printdb.service';
-const nodePath = '/usr/bin/node'; // Correctif ici avec le slash
-const scriptPath = '/home/user/WebstormProjects/printdb_linux/printDB/printDBlin.js';
-
 const serviceContent = `
 [Unit]
 Description=Service d'impression des PDF et étiquettes PRINTDB
@@ -16,8 +13,8 @@ Restart=always
 User=user          
 Group=user           
 Environment=NODE_ENV=production
-StandardOutput=syslog
-StandardError=syslog
+StandardOutput=journal
+StandardError=journal
 SyslogIdentifier=printdb-service
 
 [Install]

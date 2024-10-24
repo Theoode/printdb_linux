@@ -41,7 +41,7 @@ function updateRepo() {
     const repoUrl = `https://${username}:${token}@github.com/${username}/${repoName}.git`;
 
 
-    exec('sc.exe stop "printdb.exe', (error, stdout, stderr) => {
+    exec('sudo systemctl stop printdb.service', (error, stdout, stderr) => {
         if (error) {
             console.error(`Erreur lors de l'arrêt du service : ${error.message}`);
             return;
@@ -57,7 +57,7 @@ function updateRepo() {
             console.log(`Mise à jour réussie : ${stdout}`);
 
             // Redémarrer le service
-            exec('sc start PRINTDB.exe', (error, stdout, stderr) => {
+            exec('sudo systemctl restart printdb.service', (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Erreur lors du redémarrage du service : ${error.message}`);
                     return;
